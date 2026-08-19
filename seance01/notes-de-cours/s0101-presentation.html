@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 1.1 - Introduction au domaine du jeu vidéo</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg2: #121a33;
+      --fg: #eef2ff;
+      --muted: #b7c0e0;
+      --accent: #61dafb;
+      --accent2: #8ef0a7;
+      --warn: #ffd166;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      overflow: hidden;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top right, #1d2b55, transparent 35%),
+        radial-gradient(circle at bottom left, #132245, transparent 40%),
+        var(--bg);
+    }
+
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 56px 72px 72px;
+      position: absolute;
+      inset: 0;
+    }
+
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: 2.35rem;
+    }
+
+    p, li {
+      font-size: 1.35rem;
+      line-height: 1.45;
+      color: var(--fg);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: 1.55rem;
+      max-width: 980px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2em;
+      max-width: 1000px;
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 22px 24px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+      color: var(--accent2);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .timeline .card p,
+    .timeline .card li,
+    .small p,
+    .small li {
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .progress {
+      width: 240px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .question {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .kbd {
+      padding: 2px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1100px) {
+      .slide { padding: 40px 40px 72px; }
+      .footer { left: 40px; right: 40px; }
+      .cols, .timeline { grid-template-columns: 1fr; }
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 1.9rem; }
+      p, li { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide active">
+      <div class="eyebrow">582-1J1 - Semaine 1, cours 1</div>
+      <h1>Introduction au domaine du jeu vidéo</h1>
+      <p class="lead">Objectif de la séance : comprendre le jeu vidéo comme produit interactif, comme industrie, et comme terrain d'application pour la programmation en JavaScript.</p>
+      <ul>
+        <li>Durée visée : environ 60 minutes</li>
+        <li>Transition vers l'environnement de développement en fin de présentation</li>
+      </ul>
+      <div class="footer">
+        <span>Navigation : <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">Espace</span></span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">1. Mise en contexte</div>
+      <h2>Pourquoi commencer le cours par le jeu vidéo ?</h2>
+      <ul>
+        <li>Parce qu'un jeu rend la programmation concrète, visible et motivante.</li>
+        <li>Dès un prototype simple, on peut travailler les variables, les conditions, les boucles, les fonctions et les événements.</li>
+        <li>Le cours ne vise pas un "gros jeu", mais un <strong>prototype jouable</strong>.</li>
+      </ul>
+      <p class="question">Question de départ : à quels jeux jouez-vous en ce moment, ou quels jeux vous ont le plus marqués ?</p>
+      <div class="footer">
+        <span>Temps suggéré : 5 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">2. Définition</div>
+      <h2>Qu'est-ce qu'un jeu vidéo ?</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>Idée centrale</h3>
+          <p>Un jeu vidéo est un <strong>produit interactif</strong> : le joueur agit, le système réagit, et cette boucle crée l'expérience.</p>
+        </div>
+        <div class="card">
+          <h3>Caractéristiques fréquentes</h3>
+          <ul class="small">
+            <li>interactivité</li>
+            <li>immersion</li>
+            <li>narration</li>
+            <li>compétition / coopération</li>
+            <li>progression et récompenses</li>
+            <li>communauté et culture</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted">À retenir : un jeu, ce n'est pas seulement un visuel; c'est un ensemble de règles, d'actions et de rétroactions.</p>
+      <div class="footer">
+        <span>Temps suggéré : 8 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">3. Industrie</div>
+      <h2>Le jeu vidéo, c'est aussi une industrie majeure</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>Pourquoi Montréal est importante</h3>
+          <ul class="small">
+            <li>forte concentration de studios</li>
+            <li>attractivité internationale</li>
+            <li>formation spécialisée</li>
+            <li>incitations fiscales et écosystème local</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Exemples d'acteurs au Québec</h3>
+          <ul class="small">
+            <li>Ubisoft Montréal</li>
+            <li>Warner Bros. Games Montréal</li>
+            <li>Eidos-Montréal</li>
+            <li>Behaviour Interactive</li>
+            <li>Beenox</li>
+            <li>La Guilde</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted">Idée à retenir : le jeu vidéo, ce n'est pas seulement "jouer"; c'est aussi un milieu professionnel réel et diversifié.</p>
+      <div class="footer">
+        <span>Temps suggéré : 8 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">4. Tendances</div>
+      <h2>Quelles tendances façonnent le domaine en ce moment ?</h2>
+      <div class="timeline">
+        <div class="card"><h3>Plateformes</h3><p>mobile, PC, consoles, cloud, VR/AR</p></div>
+        <div class="card"><h3>Usage</h3><p>multijoueur, social, streaming, e-sport</p></div>
+        <div class="card"><h3>Production</h3><p>IA, indépendants, distribution numérique</p></div>
+        <div class="card"><h3>Business</h3><p>free-to-play, abonnements, microtransactions</p></div>
+        <div class="card"><h3>Design</h3><p>service continu, mises à jour, saisons</p></div>
+        <div class="card"><h3>Valeurs</h3><p>accessibilité, inclusion, expérience utilisateur</p></div>
+      </div>
+      <div class="footer">
+        <span>Temps suggéré : 6 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">5. Genres, mécaniques, public cible</div>
+      <h2>Trois notions à bien distinguer</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>Genre</h3>
+          <p>Le type d'expérience générale proposé au joueur : plateforme, action, aventure, RPG, stratégie, simulation, casse-têtes, horreur, etc.</p>
+        </div>
+        <div class="card">
+          <h3>Mécanique</h3>
+          <p>Ce que le joueur fait concrètement : sauter, tirer, collecter, construire, résoudre, esquiver, gérer des ressources.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Public cible</h3>
+        <p>On pense ici à l'âge, à l'expérience, à la plateforme, à la durée des sessions, au niveau de difficulté attendu et aux attentes du joueur.</p>
+      </div>
+      <p class="question">Mini-activité : choisissez un jeu connu et nommez son genre, une mécanique principale et son public cible.</p>
+      <div class="footer">
+        <span>Temps suggéré : 10 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">6. Histoire</div>
+      <h2>Bref survol de l'histoire du jeu vidéo</h2>
+      <div class="timeline">
+        <div class="card"><h3>1950-60</h3><p>expérimentations techniques sur ordinateurs de recherche</p></div>
+        <div class="card"><h3>1970</h3><p>arcade, naissance de l'industrie, Pong</p></div>
+        <div class="card"><h3>1980</h3><p>consoles, PC, sprites, franchises marquantes</p></div>
+        <div class="card"><h3>1990</h3><p>3D, Internet, diversification des genres</p></div>
+        <div class="card"><h3>2000</h3><p>mondes ouverts, jeu en ligne massif, haute définition</p></div>
+        <div class="card"><h3>2010+</h3><p>distribution numérique, mobiles, indés, services, VR/AR</p></div>
+      </div>
+      <p class="muted">Idée clé : l'histoire du jeu vidéo suit l'évolution des technologies, des usages et des modèles économiques.</p>
+      <div class="footer">
+        <span>Temps suggéré : 8 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">7. Production</div>
+      <h2>Comment fabrique-t-on un jeu ?</h2>
+      <ol style="font-size:1.25rem; line-height:1.5; max-width:1000px; padding-left:1.25em; margin:0;">
+        <li>idée de départ, concept et public cible</li>
+        <li>recherche et analyse du marché</li>
+        <li>préproduction et planification</li>
+        <li>gameplay et mécaniques</li>
+        <li>univers, narration, niveaux</li>
+        <li>art, animation, son, interface</li>
+        <li><strong>programmation</strong></li>
+        <li>tests et itérations</li>
+        <li>optimisation et polissage</li>
+        <li>lancement, marketing et suivi</li>
+      </ol>
+      <p class="muted">Le programmeur n'est pas seul : il transforme les idées de l'équipe en systèmes jouables.</p>
+      <div class="footer">
+        <span>Temps suggéré : 7 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">8. Métiers</div>
+      <h2>Un jeu vidéo se construit en équipe</h2>
+      <div class="timeline">
+        <div class="card"><h3>Design</h3><p>game designer, concepteur de niveaux</p></div>
+        <div class="card"><h3>Technique</h3><p>programmeur gameplay, interface, moteur, outils</p></div>
+        <div class="card"><h3>Visuel</h3><p>artiste, animateur, artiste d'interface</p></div>
+        <div class="card"><h3>Narration</h3><p>scénariste, concepteur narratif</p></div>
+        <div class="card"><h3>Qualité</h3><p>testeur QA, UX, accessibilité</p></div>
+        <div class="card"><h3>Production</h3><p>producteur, gestion de projet, marketing, audio</p></div>
+      </div>
+      <div class="footer">
+        <span>Temps suggéré : 4 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">9. Lien avec le cours</div>
+      <h2>Ce que vous ferez dans 582-1J1</h2>
+      <ul>
+        <li>installer un environnement de travail simple</li>
+        <li>écrire du JavaScript</li>
+        <li>manipuler des images, le canvas, l'animation et les événements</li>
+        <li>concevoir un petit jeu jouable</li>
+        <li>relier la programmation à une expérience concrète</li>
+      </ul>
+      <p class="lead">En bref : vous allez apprendre à programmer en construisant des systèmes interactifs inspirés du jeu vidéo.</p>
+      <div class="footer">
+        <span>Temps suggéré : 3 min</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">10. Conclusion</div>
+      <h2>Les 4 idées à retenir</h2>
+      <ul>
+        <li>Le jeu vidéo est un <strong>produit interactif</strong>.</li>
+        <li>Le jeu vidéo est une <strong>industrie importante et diversifiée</strong>.</li>
+        <li>On comprend un jeu par son <strong>genre</strong>, ses <strong>mécaniques</strong> et son <strong>public cible</strong>.</li>
+        <li>La <strong>programmation</strong> sert à transformer des idées en expérience jouable.</li>
+      </ul>
+      <p class="question">Transition : on passe maintenant à l'environnement de développement et aux premiers outils.</p>
+      <div class="footer">
+        <span>Fin de la présentation</span>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const bars = Array.from(document.querySelectorAll('.bar'));
+    let index = 0;
+
+    function render() {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      const percent = ((index + 1) / slides.length) * 100;
+      bars.forEach((bar) => { bar.style.width = percent + '%'; });
+      document.title = 'Séance 1.1 (' + (index + 1) + '/' + slides.length + ')';
+    }
+
+    function next() {
+      if (index < slides.length - 1) {
+        index += 1;
+        render();
+      }
+    }
+
+    function prev() {
+      if (index > 0) {
+        index -= 1;
+        render();
+      }
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
+        event.preventDefault();
+        next();
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        event.preventDefault();
+        prev();
+      }
+      if (event.key === 'Home') {
+        index = 0;
+        render();
+      }
+      if (event.key === 'End') {
+        index = slides.length - 1;
+        render();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      const isTextSelection = window.getSelection && String(window.getSelection()).length > 0;
+      if (!isTextSelection) {
+        if (event.clientX > window.innerWidth * 0.25) {
+          next();
+        } else {
+          prev();
+        }
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>
