@@ -5,12 +5,12 @@
 - Étapes de création de jeu, genres, mécaniques principales
 - Public cible
 
-### Lecture
+### Notes de cours
 > Consultez la note de cours sommaire : [s0101-sommaire-cours.md](notes-de-cours/s0101-sommaire-cours.md)
 
-> Consultez la présentation : [s0101-presentation.html](notes-de-cours/s0101-presentation.html)
+> Consultez la présentation : [s0101-presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/notes-de-cours/s0101-presentation.html)
 
-### Lisez aussi les notes de cours plus détaillées (de mon collègue Maxime Lacasse-Germain) : 
+### Notes de cours plus détaillées (de mon collègue Maxime Lacasse-Germain) : 
 
 > Histoire du jeu : [jeu-histoire.pdf](notes-de-cours/jeu-histoire.pdf)
 
