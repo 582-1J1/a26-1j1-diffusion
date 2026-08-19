@@ -8,7 +8,7 @@
 ### Notes de cours
 > Consultez la note de cours sommaire : [s0101-sommaire-cours.md](notes-de-cours/s0101-sommaire-cours.md)
 
-> Consultez la présentation : [s0101-presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/notes-de-cours/s0101-presentation.html)
+> Consultez la présentation : [s0101-presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/seance01/notes-de-cours/s0101-presentation.html)
 
 ### Notes de cours plus détaillées (de mon collègue Maxime Lacasse-Germain) : 
 
