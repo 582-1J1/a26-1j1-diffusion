@@ -1,12 +1,9 @@
 # Séance 1.1 – Sommaire du cours
-
-## Contexte
-- Cours : **582-1J1 – Animation et interactivité en jeu**
 - Semaine 1, cours 1
-- Plan de cours : survol de l'industrie du jeu vidéo, étapes de création d'un jeu, genres, mécaniques principales et public cible
+- Survol de l'industrie du jeu vidéo, étapes de création d'un jeu, genres, mécaniques principales et public cible
 
 ## Intention pédagogique de la séance
-Cette première rencontre sert surtout à **situer le jeu vidéo comme domaine de création et d'emploi**, puis à **relier ce domaine au rôle du programmeur** dans un projet de jeu. L'objectif n'est pas de tout couvrir en profondeur, mais plutôt de donner aux étudiantes et aux étudiants une vue d'ensemble qui donnera du sens aux exercices de JavaScript du reste de la session.
+Cette première rencontre sert surtout à **situer le jeu vidéo comme domaine de création et d'emploi**, puis à **relier ce domaine au rôle du programmeur** dans un projet de jeu. L'objectif n'est pas de tout couvrir en profondeur, mais plutôt de vous donner une vue d'ensemble qui donnera du sens aux exercices de JavaScript du reste de la session.
 
 ---
 
@@ -64,7 +61,8 @@ Quelques tendances simples à retenir :
 - accessibilité et inclusion
 
 ### 5. Les grands genres de jeux
-Un genre décrit surtout **le type d'expérience proposé au joueur**. Exemples utiles en classe :
+Un genre décrit surtout **le type d'expérience proposé au joueur**. Exemples utiles :
+- éducatif
 - plateforme
 - action
 - aventure
@@ -77,10 +75,10 @@ Un genre décrit surtout **le type d'expérience proposé au joueur**. Exemples 
 - MMO
 - narratif
 
-À rappeler : plusieurs jeux mélangent plusieurs genres.
+📌 Plusieurs jeux mélangent plusieurs genres.
 
 ### 6. Mécaniques de jeu et public cible
-Deux idées centrales à faire retenir :
+Deux idées centrales à retenir :
 
 #### Mécaniques de jeu
 Ce sont les **règles et interactions** qui définissent l'expérience :
@@ -141,8 +139,8 @@ Le jeu vidéo est un travail d'équipe. Voici quelques rôles clés :
 - marketing
 - audio
 
-### 10. Lien direct avec ce cours
-Dans ce cours, les étudiants ne feront pas "tout un gros jeu", mais plutôt un **prototype simple**. Le cours les amène à :
+### 10. Lien direct avec notre cours
+Dans ce cours, vous ne réaliserez évidement pas "tout un gros jeu", mais plutôt un **prototype simple**. Le cours vous amènent à :
 - comprendre les bases du jeu interactif
 - programmer en JavaScript
 - manipuler des images et des animations
