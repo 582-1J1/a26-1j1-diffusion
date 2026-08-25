@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 1.2 - Découvrir l'environnement de développement</title>
+  <style>
+    :root { --fond: #102a43; --fond-clair: #1f4e5f; --texte: #f4f7f9; --pale: #c8d6df; --accent: #f6bd60; --vert: #84a59d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; font-family: Georgia, "Times New Roman", serif; background: var(--fond); color: var(--texte); overflow: hidden; }
+    body { background: linear-gradient(135deg, var(--fond), var(--fond-clair)); }
+    .diaporama { width: 100vw; height: 100vh; position: relative; }
+    .diapositive { display: none; position: absolute; inset: 0; padding: 8vh 9vw 12vh; }
+    .diapositive.active { display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+    .repere { color: var(--accent); font: 700 1rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2 { margin: 0; line-height: 1.1; }
+    h1 { max-width: 950px; font-size: clamp(2.4rem, 5vw, 4.8rem); }
+    h2 { max-width: 1000px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    p, li { max-width: 1000px; font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.45; }
+    ul, ol { margin: 0; padding-left: 1.4em; }
+    code { color: var(--accent); font-family: Consolas, monospace; }
+    .encadre { max-width: 1000px; padding: 1.2rem 1.5rem; border-left: 5px solid var(--vert); background: rgba(255,255,255,.1); }
+    .encadre p { margin: .35rem 0; }
+    .pied { position: absolute; left: 9vw; right: 9vw; bottom: 2rem; display: flex; justify-content: space-between; color: var(--pale); font: 1rem Arial, sans-serif; }
+    .aide { color: var(--pale); }
+    @media (max-width: 700px) { .diapositive { padding: 7vh 7vw 14vh; } .pied { left: 7vw; right: 7vw; } }
+  </style>
+</head>
+<body>
+  <main class="diaporama">
+    <section class="diapositive active">
+      <div class="repere">582-1J1 · Semaine 1, cours 2</div>
+      <h1>Découvrir l'environnement de développement</h1>
+      <p>Avant de programmer un jeu, il faut savoir où écrire le code, comment organiser les fichiers et comment observer le résultat.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">01 · Les outils</div>
+      <h2>Deux outils, deux rôles</h2>
+      <ul><li><strong>Visual Studio Code</strong> sert à écrire et à organiser le code.</li><li>Le <strong>navigateur Web</strong> ouvre la page et exécute le JavaScript.</li><li>Les <strong>outils de développement</strong> aident à observer et à déboguer.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">02 · Le projet</div>
+      <h2>Une arborescence claire</h2>
+      <div class="encadre"><p><code>mon-projet/</code></p><p>├── <code>index.html</code></p><p>└── <code>assets/js/script.js</code></p></div>
+      <p>Le navigateur part de <code>index.html</code> et suit les chemins relatifs pour charger les autres fichiers.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">03 · Le lien</div>
+      <h2>HTML charge JavaScript</h2>
+      <div class="encadre"><p><code>&lt;script src="assets/js/script.js"&gt;&lt;/script&gt;</code></p></div>
+      <p>Cette balise indique au navigateur où se trouve le fichier JavaScript.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">04 · Observer</div>
+      <h2>La console montre ce que fait le programme</h2>
+      <div class="encadre"><p><code>console.log("Le fichier JavaScript est chargé.");</code></p></div>
+      <p>La console est un espace de travail réservé à l'observation du programme. Elle n'est pas affichée dans la page du joueur.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">05 · Déboguer</div>
+      <h2>Quand quelque chose ne fonctionne pas</h2>
+      <ol><li>Vérifier le chemin du fichier JavaScript.</li><li>Vérifier le nom exact des fichiers et des dossiers.</li><li>Lire le message dans la console.</li><li>Enregistrer les fichiers et recharger la page.</li></ol>
+    </section>
+    <section class="diapositive">
+      <div class="repere">06 · Atelier</div>
+      <h2>À vous de jouer</h2>
+      <ul><li>Installer Visual Studio Code et les extensions présentées.</li><li>Reproduire l'arborescence du gabarit.</li><li>Modifier un message dans <code>script.js</code>.</li><li>Observer le nouveau message dans la console.</li></ul>
+    </section>
+    <footer class="pied"><span>← → ou Espace pour naviguer</span><span class="aide">Semaine 1 · Séance 2</span></footer>
+  </main>
+  <script>
+    const diapositives = document.querySelectorAll(".diapositive");
+    let numero = 0;
+    function afficherDiapositive(nouveauNumero) {
+      numero = (nouveauNumero + diapositives.length) % diapositives.length;
+      diapositives.forEach((diapositive, index) => diapositive.classList.toggle("active", index === numero));
+    }
+    document.addEventListener("keydown", (evenement) => {
+      if (evenement.key === "ArrowRight" || evenement.key === " ") afficherDiapositive(numero + 1);
+      if (evenement.key === "ArrowLeft") afficherDiapositive(numero - 1);
+    });
+  </script>
+</body>
+</html>
