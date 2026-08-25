@@ -12,6 +12,7 @@
 - Éditeur de code, navigateur Web et outils de développement
 - Balise `<script>`, arborescence de projet et `console.log()`
 - Installation de l'environnement de développement à la maison
+- Activité hors cours : [Recherche sur un jeu vidéo](seance02/pratique/recherche-jeu.md)
 
 **Semaine 1 - Séance 1** [Accéder aux fichiers](seance01/readme.md)
 - Présentation et plan de cours

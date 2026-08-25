@@ -24,3 +24,6 @@
 - Installer Visual Studio Code et les extensions présentées en classe.
 - Reproduire le gabarit de base sur votre ordinateur.
 - Vérifier le message affiché dans la console du navigateur.
+
+### Activité hors cours
+> Réalisez l'activité [Recherche sur un jeu vidéo](pratique/recherche-jeu.md).
