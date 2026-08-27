@@ -14,6 +14,8 @@
 - Types de données simples : `String` et `undefined`
 - Manipulation de chaînes de caractères
 
+---
+
 ### ÉTAPE #1 : S’initier à l’environnement de développement
 
 **Semaine 1 - Séance 2** [Accéder aux fichiers](seance02/readme.md)
