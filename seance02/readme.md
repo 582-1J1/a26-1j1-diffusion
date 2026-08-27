@@ -11,14 +11,7 @@
 > Consultez la note de cours sommaire : [s0102-sommaire-cours.md](notes-de-cours/s0102-sommaire-cours.md)
 
 ### Présentation
-> Consultez la présentation : [s0102-presentation.html](notes-de-cours/s0102-presentation.html)
-
-### Exemple de code
-> Ouvrez le gabarit de base : [index.html](exemple-gabarit/index.html)
-
-> Le fichier JavaScript : [script.js](exemple-gabarit/assets/js/script.js)
-
-> La feuille de style minimale : [styles.css](exemple-gabarit/assets/css/styles.css)
+> Consultez la présentation : [s0102-presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/seance02/notes-de-cours/s0102-presentation.html)
 
 ### Atelier
 - Installer Visual Studio Code et les extensions présentées en classe.

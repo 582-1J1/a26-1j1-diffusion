@@ -5,6 +5,15 @@
 
 ## Calendrier des activités (ordre chronologique inverse : du plus récent au plus ancien)
 
+### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
+
+**Semaine 2 - Séance 1** [Accéder aux fichiers](seance03/readme.md)
+- Introduction au langage JavaScript
+- Déclaration et affectation de variables et de constantes
+- Opérateur d'affectation et expressions
+- Types de données simples : `String` et `undefined`
+- Manipulation de chaînes de caractères
+
 ### ÉTAPE #1 : S’initier à l’environnement de développement
 
 **Semaine 1 - Séance 2** [Accéder aux fichiers](seance02/readme.md)
