@@ -14,6 +14,7 @@
 - Techniques de débogage : `alert()`, `prompt()` et `typeof`
 - Aperçu d'une condition avec `if` et `else`
 - Exemple de code : [gabarit de séance](seance04/exemple-gabarit/)
+- Atelier : [Récupérer le matériel de cours avec Git](seance04/atelier/git.md)
 - Travail de classe : [Signaux dans le jardin](seance04/pratique/signaux-jardin.md)
 
 **Séance 3** [Accéder aux fichiers](seance03/readme.md)

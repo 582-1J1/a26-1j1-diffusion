@@ -18,5 +18,8 @@
 ### Exemple de code
 > Ouvrez le gabarit d'exemple : [exemple-gabarit](exemple-gabarit/)
 
+### Atelier
+> Consultez la fiche [Récupérer le matériel de cours avec Git](atelier/git.md).
+
 ### Travail de classe
 > Réalisez l'exercice [Signaux dans le jardin](pratique/signaux-jardin.md).
