@@ -39,6 +39,13 @@ git pull
 
 3. Les nouveaux fichiers et les modifications s'ajoutent automatiquement à votre dossier.
 
+> 🛠️ **En cas de problème** : si vous avez modifié un fichier du dossier `1j1-diffusion-prof` malgré la consigne et que la commande `git pull` refuse de fonctionner, exécutez les deux commandes suivantes pour remettre le dossier exactement comme sur GitHub (attention, cela efface définitivement vos modifications locales) :
+>
+> ```
+> git fetch origin
+> git reset --hard origin/main
+> ```
+
 ### Pour aller plus loin (optionnel, hors cours)
 
 Si vous préférez éviter la ligne de commande sur votre ordinateur personnel, vous pouvez installer [GitHub Desktop](https://desktop.github.com/), une application avec une interface graphique qui permet de cloner un dépôt et de le mettre à jour en cliquant simplement sur un bouton. Cette étape est entièrement facultative et ne sera pas couverte en classe.
