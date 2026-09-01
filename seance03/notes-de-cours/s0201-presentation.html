@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 2.1 - Introduction au langage JavaScript</title>
+  <style>
+    :root { --fond: #102a43; --fond2: #1f4e5f; --texte: #f7f3e8; --pale: #c8d6df; --accent: #f6bd60; --vert: #84a59d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; font-family: Georgia, "Times New Roman", serif; color: var(--texte); background: var(--fond); overflow: hidden; }
+    body { background: linear-gradient(135deg, var(--fond), var(--fond2)); }
+    .diaporama { width: 100vw; height: 100vh; position: relative; }
+    .diapositive { display: none; position: absolute; inset: 0; padding: 8vh 9vw 12vh; }
+    .diapositive.active { display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+    .repere { color: var(--accent); font: 700 1rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2 { margin: 0; line-height: 1.1; }
+    h1 { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.8rem); }
+    h2 { max-width: 1000px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    p, li { max-width: 1000px; font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.45; }
+    ul, ol { margin: 0; padding-left: 1.4em; }
+    code { color: var(--accent); font-family: Consolas, monospace; }
+    .exemple { max-width: 1000px; padding: 1.2rem 1.5rem; border-left: 5px solid var(--vert); background: rgba(255,255,255,.1); }
+    .exemple p { margin: .3rem 0; }
+    .pied { position: absolute; left: 9vw; right: 9vw; bottom: 2rem; display: flex; justify-content: space-between; color: var(--pale); font: 1rem Arial, sans-serif; }
+    @media (max-width: 700px) { .diapositive { padding: 7vh 7vw 14vh; } .pied { left: 7vw; right: 7vw; } }
+  </style>
+</head>
+<body>
+  <main class="diaporama">
+    <section class="diapositive active">
+      <div class="repere">582-1J1 · Semaine 2, cours 1</div>
+      <h1>Introduction au langage JavaScript</h1>
+      <p>Un programme conserve des informations, les transforme et les utilise pour faire fonctionner un jeu.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">01 · Variables</div>
+      <h2>Une variable conserve une information</h2>
+      <div class="exemple"><p><code>let message = "La partie commence.";</code></p><p><code>message = "Trouvez les lucioles.";</code></p></div>
+      <p>Avec <code>let</code>, la valeur peut être remplacée pendant l'exécution.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">02 · Constantes</div>
+      <h2>Une constante ne change pas</h2>
+      <div class="exemple"><p><code>const titreJeu = "Le jardin des lucioles";</code></p></div>
+      <p>Le titre du jeu reste le même pendant la partie. <code>const</code> décrit donc bien cette information.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">03 · Affectation</div>
+      <h2>Le signe égal affecte une valeur</h2>
+      <div class="exemple"><p><code>message = "Trouvez les lucioles.";</code></p></div>
+      <p>La valeur située à droite est placée dans la variable située à gauche.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">04 · Expressions</div>
+      <h2>Une expression produit une valeur</h2>
+      <div class="exemple"><p><code>const message = "Bienvenue dans " + titreJeu;</code></p></div>
+      <p>Le signe <code>+</code> permet de réunir deux chaînes de caractères.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">05 · Chaînes</div>
+      <h2>Manipuler des textes</h2>
+      <div class="exemple"><p><code>const nom = "Lucioles";</code></p><p><code>nom.toUpperCase();</code></p><p><code>nom.length;</code></p></div>
+      <p>Une chaîne est un texte entre guillemets. JavaScript peut en lire la longueur ou modifier sa casse.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">06 · undefined</div>
+      <h2>Une information peut être absente</h2>
+      <div class="exemple"><p><code>let score;</code></p><p><code>console.log(score); // undefined</code></p></div>
+      <p>La variable existe, mais aucune valeur ne lui a encore été attribuée.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">07 · Pour le jeu</div>
+      <h2>Préparer les informations du projet</h2>
+      <ul><li>le titre du jeu;</li><li>le nom du joueur;</li><li>un message;</li><li>le score.</li></ul>
+      <p>Ces informations pourront être utilisées plus tard dans le Canvas.</p>
+    </section>
+    <footer class="pied"><span>← → ou Espace pour naviguer</span><span>Semaine 2 · Séance 3</span></footer>
+  </main>
+  <script>
+    const diapositives = document.querySelectorAll(".diapositive");
+    let numero = 0;
+    function afficherDiapositive(nouveauNumero) {
+      numero = (nouveauNumero + diapositives.length) % diapositives.length;
+      diapositives.forEach((diapositive, index) => diapositive.classList.toggle("active", index === numero));
+    }
+    document.addEventListener("keydown", (evenement) => {
+      if (evenement.key === "ArrowRight" || evenement.key === " ") afficherDiapositive(numero + 1);
+      if (evenement.key === "ArrowLeft") afficherDiapositive(numero - 1);
+    });
+  </script>
+</body>
+</html>

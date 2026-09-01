@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 2.2 - Manipulation de nombres et de valeurs booléennes</title>
+  <style>
+    :root { --fond: #102a43; --fond2: #1f4e5f; --texte: #f7f3e8; --pale: #c8d6df; --accent: #f6bd60; --vert: #84a59d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; font-family: Georgia, "Times New Roman", serif; color: var(--texte); background: var(--fond); overflow: hidden; }
+    body { background: linear-gradient(135deg, var(--fond), var(--fond2)); }
+    .diaporama { width: 100vw; height: 100vh; position: relative; }
+    .diapositive { display: none; position: absolute; inset: 0; padding: 8vh 9vw 12vh; }
+    .diapositive.active { display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+    .repere { color: var(--accent); font: 700 1rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2 { margin: 0; line-height: 1.1; }
+    h1 { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.8rem); }
+    h2 { max-width: 1000px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    p, li { max-width: 1000px; font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.45; }
+    ul { margin: 0; padding-left: 1.4em; }
+    code { color: var(--accent); font-family: Consolas, monospace; }
+    .exemple { max-width: 1000px; padding: 1.2rem 1.5rem; border-left: 5px solid var(--vert); background: rgba(255, 255, 255, .1); }
+    .exemple p { margin: .3rem 0; }
+    .pied { position: absolute; left: 9vw; right: 9vw; bottom: 2rem; display: flex; justify-content: space-between; color: var(--pale); font: 1rem Arial, sans-serif; }
+    @media (max-width: 700px) { .diapositive { padding: 7vh 7vw 14vh; } .pied { left: 7vw; right: 7vw; } }
+  </style>
+</head>
+<body>
+  <main class="diaporama">
+    <section class="diapositive active">
+      <div class="repere">582-1J1 · Semaine 2, cours 2</div>
+      <h1>Manipulation de nombres et de valeurs booléennes</h1>
+      <p>Un jeu utilise des calculs, des conversions et des règles pour décider ce qui doit se passer.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">01 · Opérateurs arithmétiques</div>
+      <h2>Calculer avec des nombres</h2>
+      <div class="exemple"><p><code>score = score + 2;</code></p><p><code>let reste = score % 2;</code></p></div>
+      <ul><li><code>+</code> <code>-</code> <code>*</code> <code>/</code> : les quatre opérations de base</li><li><code>%</code> : le reste d'une division</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">02 · Incrémentation</div>
+      <h2>Augmenter ou diminuer une valeur</h2>
+      <div class="exemple"><p><code>score++;</code></p><p><code>nombreVies--;</code></p></div>
+      <p><code>++</code> ajoute <code>1</code>, <code>--</code> soustrait <code>1</code>.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">03 · Conversion</div>
+      <h2>Une chaîne de caractères n'est pas un nombre</h2>
+      <div class="exemple"><p><code>let reponse = prompt("Combien ?");</code></p><p><code>let n = Number(reponse);</code></p></div>
+      <p><code>prompt()</code> retourne toujours une chaîne. <code>Number()</code> la convertit.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">04 · Débogage</div>
+      <h2>Alert, prompt et typeof</h2>
+      <ul><li><code>alert()</code> affiche un message.</li><li><code>prompt()</code> pose une question.</li><li><code>typeof</code> indique le type d'une valeur.</li><li>Consultez une référence fiable, comme MDN, en cas de doute.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">05 · Comparaisons</div>
+      <h2>Une comparaison produit vrai ou faux</h2>
+      <div class="exemple"><p><code>const objectifAtteint = score >= objectif;</code></p></div>
+      <p>Le résultat est une valeur booléenne : <code>true</code> ou <code>false</code>.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">06 · Opérateurs</div>
+      <h2>Comment comparer deux valeurs</h2>
+      <ul><li><code>===</code> : égal à</li><li><code>!==</code> : différent de</li><li><code>&gt;</code> et <code>&lt;</code> : plus grand ou plus petit</li><li><code>&gt;=</code> et <code>&lt;=</code> : inclut l'égalité</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">07 · Aperçu</div>
+      <h2>Un premier regard sur <code>if</code> et <code>else</code></h2>
+      <div class="exemple"><p><code>if (score >= objectif) {</code></p><p><code>  console.log("Objectif atteint !");</code></p><p><code>} else {</code></p><p><code>  console.log("Continuez !");</code></p><p><code>}</code></p></div>
+      <p>Nous approfondirons les conditions au prochain cours.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">08 · Pour le projet</div>
+      <h2>Les règles du jardin</h2>
+      <ul><li>Augmenter le score avec <code>++</code>.</li><li>Convertir une réponse en nombre.</li><li>Comparer le score à un objectif.</li></ul>
+      <p>Ces opérations feront plus tard partie des règles de nos projets de jeux.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">09 · Travail de classe</div>
+      <h2>Signaux dans le jardin</h2>
+      <ul><li>Utiliser les opérateurs arithmétiques et l'incrémentation.</li><li>Convertir une réponse avec <code>Number()</code>.</li><li>Écrire une condition avec <code>if</code> et <code>else</code>.</li></ul>
+    </section>
+    <footer class="pied"><span>← → ou Espace pour naviguer</span><span>Semaine 2 · Séance 4</span></footer>
+  </main>
+  <script>
+    const diapositives = document.querySelectorAll(".diapositive");
+    let numero = 0;
+    function afficherDiapositive(nouveauNumero) {
+      numero = (nouveauNumero + diapositives.length) % diapositives.length;
+      diapositives.forEach((diapositive, index) => diapositive.classList.toggle("active", index === numero));
+    }
+    document.addEventListener("keydown", (evenement) => {
+      if (evenement.key === "ArrowRight" || evenement.key === " ") afficherDiapositive(numero + 1);
+      if (evenement.key === "ArrowLeft") afficherDiapositive(numero - 1);
+    });
+  </script>
+</body>
+</html>
