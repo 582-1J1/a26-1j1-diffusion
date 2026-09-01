@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Séance 1.1 - Introduction au domaine du jeu vidéo</title>
+  <title>Séance 1 - Introduction au domaine du jeu vidéo</title>
   <style>
     :root {
       --bg: #0b1020;
@@ -183,7 +183,7 @@
 <body>
   <main class="deck">
     <section class="slide active">
-      <div class="eyebrow">582-1J1 - Semaine 1, cours 1</div>
+      <div class="eyebrow">582-1J1 · Séance 1</div>
       <h1>Introduction au domaine du jeu vidéo</h1>
       <p class="lead">Objectif de la séance : comprendre le jeu vidéo comme produit interactif, comme industrie, et comme terrain d'application pour la programmation en JavaScript.</p>
       <ul>
@@ -401,7 +401,7 @@
       slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
       const percent = ((index + 1) / slides.length) * 100;
       bars.forEach((bar) => { bar.style.width = percent + '%'; });
-      document.title = 'Séance 1.1 (' + (index + 1) + '/' + slides.length + ')';
+      document.title = 'Séance 1 (' + (index + 1) + '/' + slides.length + ')';
     }
 
     function next() {

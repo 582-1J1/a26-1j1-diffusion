@@ -7,7 +7,7 @@
 
 ### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
 
-**Semaine 2 - Séance 2** [Accéder aux fichiers](seance04/readme.md)
+**Séance 4** [Accéder aux fichiers](seance04/readme.md)
 - Opérateurs arithmétiques, incrémentation et décrémentation
 - Conversion de chaînes de caractères en nombre
 - Comparaisons et valeurs booléennes : `true` et `false`
@@ -16,7 +16,7 @@
 - Exemple de code : [gabarit de séance](seance04/exemple-gabarit/)
 - Travail de classe : [Signaux dans le jardin](seance04/pratique/signaux-jardin.md)
 
-**Semaine 2 - Séance 1** [Accéder aux fichiers](seance03/readme.md)
+**Séance 3** [Accéder aux fichiers](seance03/readme.md)
 - Introduction au langage JavaScript
 - Déclaration et affectation de variables et de constantes
 - Opérateur d'affectation et expressions
@@ -28,14 +28,14 @@
 
 ### ÉTAPE #1 : S’initier à l’environnement de développement
 
-**Semaine 1 - Séance 2** [Accéder aux fichiers](seance02/readme.md)
+**Séance 2** [Accéder aux fichiers](seance02/readme.md)
 - Familiarisation avec l'environnement de développement
 - Éditeur de code, navigateur Web et outils de développement
 - Balise `<script>`, arborescence de projet et `console.log()`
 - Installation de l'environnement de développement à la maison
 - Activité hors cours : [Recherche sur un jeu vidéo](seance02/pratique/recherche-jeu.md)
 
-**Semaine 1 - Séance 1** [Accéder aux fichiers](seance01/readme.md)
+**Séance 1** [Accéder aux fichiers](seance01/readme.md)
 - Présentation et plan de cours
 - Survol des caractéristiques de l'industrie du jeu vidéo
 - Étapes de création de jeu, genres, mécaniques principales

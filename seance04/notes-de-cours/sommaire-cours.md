@@ -1,5 +1,4 @@
-# Séance 2.2 - Manipulation de nombres et de valeurs booléennes
-- Semaine 2, cours 2
+# Séance 4 - Manipulation de nombres et de valeurs booléennes
 - Opérateurs arithmétiques, incrémentation, décrémentation, conversion de chaînes en nombre, valeurs booléennes, comparaisons et techniques de débogage
 
 ## Objectifs de la séance

@@ -1,5 +1,4 @@
-# Séance 2.1 – Introduction au langage JavaScript
-- Semaine 2, cours 1
+# Séance 3 – Introduction au langage JavaScript
 - Variables, constantes, affectation, expressions et chaînes de caractères
 
 ## Objectifs de la séance

@@ -1,5 +1,4 @@
-# Séance 1.2 – Découvrir l'environnement de développement
-- Semaine 1, cours 2
+# Séance 2 – Découvrir l'environnement de développement
 - Éditeur de code, navigateur Web, projet Web, fichier JavaScript et techniques de débogage
 
 ## Objectifs de la séance

@@ -1,4 +1,4 @@
-# Semaine 1 – Séance 2 : Découvrir l'environnement de développement
+# Séance 2 : Découvrir l'environnement de développement
 
 ### Objectifs
 - Reconnaître les rôles de l'éditeur de code et du navigateur Web
@@ -8,10 +8,10 @@
 - Ouvrir les outils de développement du navigateur
 
 ### Notes de cours
-> Consultez la note de cours sommaire : [s0102-sommaire-cours.md](notes-de-cours/s0102-sommaire-cours.md)
+> Consultez la note de cours sommaire : [sommaire-cours.md](notes-de-cours/sommaire-cours.md)
 
 ### Présentation
-> Consultez la présentation : [s0102-presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/seance02/notes-de-cours/s0102-presentation.html)
+> Consultez la présentation : [presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/seance02/notes-de-cours/presentation.html)
 
 ### Atelier
 - Installer Visual Studio Code et les extensions présentées en classe.

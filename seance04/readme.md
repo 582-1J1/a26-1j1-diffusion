@@ -1,4 +1,4 @@
-# Semaine 2 - Séance 4 : Manipulation de nombres et de valeurs booléennes
+# Séance 4 : Manipulation de nombres et de valeurs booléennes
 
 ### Objectifs
 - Utiliser les opérateurs arithmétiques dans des calculs simples
@@ -10,10 +10,10 @@
 - Avoir un premier aperçu d'une condition avec `if` et `else`
 
 ### Notes de cours
-> Consultez la note de cours sommaire : [s0202-sommaire-cours.md](notes-de-cours/s0202-sommaire-cours.md)
+> Consultez la note de cours sommaire : [sommaire-cours.md](notes-de-cours/sommaire-cours.md)
 
 ### Présentation
-> Consultez la présentation : [s0202-presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/seance04/notes-de-cours/s0202-presentation.html)
+> Consultez la présentation : [presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/seance04/notes-de-cours/presentation.html)
 
 ### Exemple de code
 > Ouvrez le gabarit d'exemple : [exemple-gabarit](exemple-gabarit/)

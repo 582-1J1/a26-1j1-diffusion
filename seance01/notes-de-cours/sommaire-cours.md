@@ -1,5 +1,4 @@
-# Séance 1.1 – Sommaire du cours
-- Semaine 1, cours 1
+# Séance 1 – Sommaire du cours
 - Survol de l'industrie du jeu vidéo, étapes de création d'un jeu, genres, mécaniques principales et public cible
 
 ## Intention pédagogique de la séance
