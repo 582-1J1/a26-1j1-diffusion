@@ -7,6 +7,12 @@
 
 ### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
 
+**Séance 5** [Accéder aux fichiers](seance05/readme.md)
+- Instructions conditionnelles : `if`, `else` et `else if`
+- Opérateurs de comparaison et opérateurs logiques
+- Exemple de code : [gabarit de séance](seance05/exemple-gabarit/)
+- Travail de classe : [La porte du jardin](seance05/pratique/porte-jardin.md)
+
 **Séance 4** [Accéder aux fichiers](seance04/readme.md)
 - Opérateurs arithmétiques, incrémentation et décrémentation
 - Conversion de chaînes de caractères en nombre
