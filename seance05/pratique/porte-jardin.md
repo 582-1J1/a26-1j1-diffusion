@@ -6,7 +6,7 @@ Utilisez des conditions et des opérateurs logiques pour déterminer si le joueu
 
 ## Préparation
 
-1. Copiez le dossier [exemple-gabarit](../exemple-gabarit/) dans un nouveau dossier nommé `porte-jardin`.
+1. Copiez le dossier `prog-base` dans un nouveau dossier nommé `porte-jardin`.
 2. Ouvrez `index.html` dans votre navigateur.
 3. Ouvrez la console du navigateur.
 

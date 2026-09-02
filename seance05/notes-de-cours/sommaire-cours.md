@@ -106,7 +106,7 @@ const passageOuvert = lucioleRecueillie && (score >= 3 || nombreVies === 0);
 
 ## 6. Décrire un état du projet de jeu
 
-Dans le projet fil-rouge, une condition pourra vérifier si le joueur touche une luciole. Pour l'instant, nous représentons cet état avec un booléen.
+Dans le projet de jeu du cours (à démarrer la semaine prochaine), une condition pourra vérifier si le joueur touche une luciole. Pour l'instant, nous représentons cet état avec une valeur *booléene* (`true`/`false`).
 
 ```js
 let score = 0;
