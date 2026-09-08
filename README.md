@@ -7,10 +7,18 @@
 
 ### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
 
+**Séance 6** [Accéder aux fichiers](seance06/readme.md)
+- Canvas et contexte de dessin en deux dimensions
+- Affichage de texte avec `fillText()`
+- Chargement et affichage d'une image avec `Image()` et `drawImage()`
+- Effacement de la surface avec `clearRect()`
+- Exemple de code : [programme de base](seance06/prog-base/)
+- Travail de classe : [La scène du jardin](seance06/pratique/scene-jardin.md)
+
 **Séance 5** [Accéder aux fichiers](seance05/readme.md)
 - Instructions conditionnelles : `if`, `else` et `else if`
 - Opérateurs de comparaison et opérateurs logiques
-- Exemple de code : [gabarit de séance](seance05/exemple-gabarit/)
+- Exemple de code : [programme de base](seance05/prog-base/)
 - Travail de classe : [La porte du jardin](seance05/pratique/porte-jardin.md)
 
 **Séance 4** [Accéder aux fichiers](seance04/readme.md)

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 6 - Introduction à la surface de dessin du navigateur</title>
+  <style>
+    :root { --fond: #102a43; --fond2: #1f4e5f; --texte: #f7f3e8; --pale: #c8d6df; --accent: #f6bd60; --vert: #84a59d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; font-family: Georgia, "Times New Roman", serif; color: var(--texte); background: var(--fond); overflow: hidden; }
+    body { background: linear-gradient(135deg, var(--fond), var(--fond2)); }
+    .diaporama { width: 100vw; height: 100vh; position: relative; }
+    .diapositive { display: none; position: absolute; inset: 0; padding: 8vh 9vw 12vh; }
+    .diapositive.active { display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+    .repere { color: var(--accent); font: 700 1rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2 { margin: 0; line-height: 1.1; }
+    h1 { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.8rem); }
+    h2 { max-width: 1000px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    p, li { max-width: 1000px; font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.45; }
+    ul { margin: 0; padding-left: 1.4em; }
+    code { color: var(--accent); font-family: Consolas, monospace; }
+    .exemple { max-width: 1000px; padding: 1.2rem 1.5rem; border-left: 5px solid var(--vert); background: rgba(255, 255, 255, .1); }
+    .exemple p { margin: .3rem 0; }
+    .pied { position: absolute; left: 9vw; right: 9vw; bottom: 2rem; display: flex; justify-content: space-between; color: var(--pale); font: 1rem Arial, sans-serif; }
+    @media (max-width: 700px) { .diapositive { padding: 7vh 7vw 14vh; } .pied { left: 7vw; right: 7vw; } }
+  </style>
+</head>
+<body>
+  <main class="diaporama">
+    <section class="diapositive active">
+      <div class="repere">582-1J1 · Séance 6</div>
+      <h1>Introduction à la surface de dessin du navigateur</h1>
+      <p>Le Canvas permet de construire la première scène visuelle du Jardin des lucioles.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">01 · Canvas</div>
+      <h2>Une surface de dessin dans la page</h2>
+      <div class="exemple"><p><code>&lt;canvas width="800" height="500"&gt;&lt;/canvas&gt;</code></p></div>
+      <p>Le Canvas réserve une surface. JavaScript doit ensuite dessiner son contenu.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">02 · Contexte</div>
+      <h2>Obtenir le contexte 2D</h2>
+      <div class="exemple"><p><code>const canvas = document.querySelector("canvas");</code></p><p><code>const contexte = canvas.getContext("2d");</code></p></div>
+      <p>Le contexte donne accès aux méthodes de dessin.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">03 · Texte</div>
+      <h2>Afficher un message avec <code>fillText()</code></h2>
+      <div class="exemple"><p><code>contexte.fillStyle = "#f6bd60";</code></p><p><code>contexte.font = "28px sans-serif";</code></p><p><code>contexte.fillText("Trouvez la luciole !", 30, 45);</code></p></div>
+    </section>
+    <section class="diapositive">
+      <div class="repere">04 · Image</div>
+      <h2>Charger une image avec <code>Image()</code></h2>
+      <div class="exemple"><p><code>const imageLuciole = new Image();</code></p><p><code>imageLuciole.src = "assets/images/luciole.svg";</code></p></div>
+      <p>Le chemin de l'image est relatif au fichier <code>index.html</code>.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">05 · Affichage</div>
+      <h2>Dessiner l'image avec <code>drawImage()</code></h2>
+      <div class="exemple"><p><code>imageLuciole.addEventListener("load", () =&gt; {</code></p><p><code>  contexte.drawImage(imageLuciole, 600, 180, 40, 40);</code></p><p><code>});</code></p></div>
+      <p>On dessine l'image après son chargement.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">06 · Effacer</div>
+      <h2>Effacer la surface avec <code>clearRect()</code></h2>
+      <div class="exemple"><p><code>contexte.clearRect(0, 0, canvas.width, canvas.height);</code></p></div>
+      <p>Cette étape sera essentielle lorsque la scène sera redessinée.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">07 · Projet fil-rouge</div>
+      <h2>La première scène du jardin</h2>
+      <ul><li>un fond;</li><li>un message;</li><li>un joueur;</li><li>une luciole.</li></ul>
+      <p>La scène est statique pour l'instant. Le déplacement et l'interaction viendront plus tard.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">08 · Travail de classe</div>
+      <h2>La scène du jardin</h2>
+      <ul><li>Modifier le message.</li><li>Déplacer les éléments.</li><li>Ajouter une forme.</li><li>Organiser le redessin dans une fonction.</li></ul>
+    </section>
+    <footer class="pied"><span>← → ou Espace pour naviguer</span><span>Séance 6</span></footer>
+  </main>
+  <script>
+    const diapositives = document.querySelectorAll(".diapositive");
+    let numero = 0;
+    function afficherDiapositive(nouveauNumero) {
+      numero = (nouveauNumero + diapositives.length) % diapositives.length;
+      diapositives.forEach((diapositive, index) => diapositive.classList.toggle("active", index === numero));
+    }
+    document.addEventListener("keydown", (evenement) => {
+      if (evenement.key === "ArrowRight" || evenement.key === " ") afficherDiapositive(numero + 1);
+      if (evenement.key === "ArrowLeft") afficherDiapositive(numero - 1);
+    });
+  </script>
+</body>
+</html>

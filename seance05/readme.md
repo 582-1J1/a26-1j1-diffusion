@@ -14,7 +14,7 @@
 > Consultez la présentation : [presentation.html](https://582-1j1.github.io/a26-1j1-diffusion/seance05/notes-de-cours/presentation.html)
 
 ### Exemple de code
-> Ouvrez le gabarit d'exemple : [exemple-gabarit](exemple-gabarit/)
+> Ouvrez le programme de base : [prog-base](prog-base/)
 
 ### Travail de classe
 > Réalisez l'exercice [La porte du jardin](pratique/porte-jardin.md).
