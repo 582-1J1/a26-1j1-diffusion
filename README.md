@@ -7,6 +7,14 @@
 
 ### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
 
+**Séance 7** [Accéder aux fichiers](seance07/readme.md)
+- Reprise du Canvas et du contexte de dessin 2D
+- Chargement et affichage d'images avec `Image()` et `drawImage()`
+- Ordre des couches visuelles et redimensionnement
+- Effacement et redessin de la surface avec `clearRect()`
+- Exemple de code : [programme de base](seance07/prog-base/)
+- Travail de classe : [Composer la scène du jardin](seance07/pratique/composer-scene.md)
+
 **Séance 6** [Accéder aux fichiers](seance06/readme.md)
 - Canvas et contexte de dessin en deux dimensions
 - Affichage de texte avec `fillText()`
