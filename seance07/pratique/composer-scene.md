@@ -16,7 +16,7 @@ Dans `assets/js/script.js` :
 
 1. Conservez la récupération du Canvas et du contexte 2D.
 2. Créez une deuxième image avec `new Image()` pour représenter le joueur.
-3. Définissez son chemin dans `src`. Vous pouvez réutiliser l'image fournie pour pratiquer le chargement.
+3. Définissez son chemin dans `src`. Vous pouvez utiliser l'image fournie.
 4. Attendez le chargement des images avant d'appeler `dessinerScene()`.
 5. Dans `dessinerScene()`, effacez d'abord le Canvas avec `clearRect()`.
 6. Dessinez ensuite le fond, le message, le joueur, puis la luciole.
