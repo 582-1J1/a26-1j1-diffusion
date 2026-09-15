@@ -48,17 +48,17 @@ const imageLuciole = new Image();
 imageLuciole.src = "assets/images/luciole.svg";
 ```
 
-Le navigateur doit avoir terminé le chargement avant que l'image puisse être dessinée. On peut utiliser l'événement `load` :
+Le navigateur doit avoir terminé le chargement avant que l'image puisse être dessinée. Pour cette séance, on attend le chargement complet de la fenêtre avec l'événement `load` :
 
 ```js
-function imageLucioleChargee() {
+function initialiser() {
   dessinerScene();
 }
 
-imageLuciole.addEventListener("load", imageLucioleChargee);
+window.addEventListener("load", initialiser);
 ```
 
-Cette forme d'écouteur sera étudiée plus en détail dans une séance ultérieure. Ici, elle sert à attendre une ressource avant de l'utiliser.
+La fonction `initialiser` est appelée lorsque la fenêtre et ses ressources sont chargées.
 
 ## 4. Dessiner dans le bon ordre
 
@@ -119,7 +119,7 @@ function dessinerScene() {
 
 À la séance 6, cette fonction était une première organisation de la scène. Aujourd'hui, nous l'utilisons pour gérer plusieurs images et leur chargement.
 
-## 7. Préparer le projet fil-rouge
+## 7. Préparer le projet de classe
 
 La scène du Jardin des lucioles commence à prendre sa forme : un arrière-plan, un joueur, une luciole et un message. Elle est encore statique. Les prochaines séances ajouteront progressivement des événements et du mouvement.
 
@@ -127,14 +127,14 @@ La scène du Jardin des lucioles commence à prendre sa forme : un arrière-plan
 const imageLuciole = new Image();
 imageLuciole.src = "assets/images/luciole.svg";
 
-function imageLucioleChargee() {
+function initialiser() {
   dessinerScene();
 }
 
-imageLuciole.addEventListener("load", imageLucioleChargee);
+window.addEventListener("load", initialiser);
 ```
 
-Le principe important est de ne pas tenter de dessiner l'image avant qu'elle soit prête.
+Le principe important est de ne pas tenter de dessiner l'image avant que la fenêtre et ses ressources soient prêtes.
 
 ## À retenir
 

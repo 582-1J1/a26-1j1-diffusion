@@ -91,7 +91,7 @@ La méthode `drawImage()` reçoit l'image, sa position et, ici, sa taille :
 contexte.drawImage(imageLuciole, 600, 180, 40, 40);
 ```
 
-Dans le projet fil-rouge, cette méthode servira à afficher le joueur, les lucioles et d'autres éléments du jeu.
+Dans le projet de classe, cette méthode servira à afficher le joueur, les lucioles et d'autres éléments du jeu.
 
 ## 7. Effacer la surface
 
@@ -114,7 +114,7 @@ contexte.fillStyle = "#f6bd60";
 contexte.fillText("Trouvez la luciole !", 30, 45);
 ```
 
-Les positions et les dimensions pourront ensuite être remplacées par des variables, comme dans l'étape précédente du projet fil-rouge.
+Les positions et les dimensions pourront ensuite être remplacées par des variables, comme dans l'étape précédente du projet de classe.
 
 ## À retenir
 

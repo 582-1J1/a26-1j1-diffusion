@@ -52,8 +52,8 @@
     <section class="diapositive">
       <div class="repere">04 · Chargement</div>
       <h2>Attendre avant de dessiner</h2>
-      <div class="exemple"><p><code>function imageLucioleChargee() {</code></p><p><code>  dessinerScene();</code></p><p><code>}</code></p><p><code>imageLuciole.addEventListener("load", imageLucioleChargee);</code></p></div>
-      <p>Le dessin commence lorsque la ressource est prête.</p>
+      <div class="exemple"><p><code>function initialiser() {</code></p><p><code>  dessinerScene();</code></p><p><code>}</code></p><p><code>window.addEventListener("load", initialiser);</code></p></div>
+      <p>Le dessin commence lorsque la fenêtre et ses ressources sont chargées.</p>
     </section>
     <section class="diapositive">
       <div class="repere">05 · Couches</div>
@@ -74,7 +74,7 @@
       <p>Cette étape prépare les futures scènes animées.</p>
     </section>
     <section class="diapositive">
-      <div class="repere">08 · Projet fil-rouge</div>
+      <div class="repere">08 · Projet de classe</div>
       <h2>Composer la scène du jardin</h2>
       <ul><li>un fond;</li><li>un message;</li><li>un joueur;</li><li>une luciole chargée comme image.</li></ul>
       <p>La scène reste statique. Le déplacement viendra plus tard.</p>

@@ -17,11 +17,12 @@ Dans `assets/js/script.js` :
 1. Conservez la récupération du Canvas et du contexte 2D.
 2. Créez une deuxième image avec `new Image()` pour représenter le joueur.
 3. Définissez son chemin dans `src`. Vous pouvez utiliser l'image fournie.
-4. Attendez le chargement des images avant d'appeler `dessinerScene()`.
-5. Dans `dessinerScene()`, effacez d'abord le Canvas avec `clearRect()`.
-6. Dessinez ensuite le fond, le message, le joueur, puis la luciole.
-7. Redimensionnez au moins une image avec les quatre derniers paramètres de `drawImage()`.
-8. Modifiez les coordonnées pour composer votre propre scène.
+4. Créez une fonction nommée `initialiser()` qui appelle `dessinerScene()`.
+5. Appelez `initialiser` lorsque la fenêtre est chargée avec `window.addEventListener("load", initialiser)`.
+6. Dans `dessinerScene()`, effacez d'abord le Canvas avec `clearRect()`.
+7. Dessinez ensuite le fond, le message, le joueur, puis la luciole.
+8. Redimensionnez au moins une image avec les quatre derniers paramètres de `drawImage()`.
+9. Modifiez les coordonnées pour composer votre propre scène.
 
 ## Vérification
 
