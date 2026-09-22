@@ -7,6 +7,17 @@
 
 ### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
 
+**Séance 9** [Accéder aux fichiers](seance09/readme.md)
+- Boucle `while`
+- Tableaux simples
+- Hasard avec `Math.random()` et `Math.floor()`
+- Analyse de problème et pseudo-code
+- Exemple de programmation : [jardin-lucioles](seance09/jardin-lucioles/)
+- Travail de classe : [Le champ de lucioles](seance09/pratique/champ-lucioles.md)
+
+**Séance 8**
+- Production - Exercice de classe #1
+
 **Séance 7** [Accéder aux fichiers](seance07/readme.md)
 - Reprise du Canvas et du contexte de dessin 2D
 - Chargement et affichage d'images avec `Image()` et `drawImage()`

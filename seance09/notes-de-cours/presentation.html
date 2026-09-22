@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 9 - Boucles, tableaux, hasard et pseudo-code</title>
+  <style>
+    :root { --fond: #102a43; --fond2: #1f4e5f; --texte: #f7f3e8; --pale: #c8d6df; --accent: #f6bd60; --vert: #84a59d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; font-family: Georgia, "Times New Roman", serif; color: var(--texte); background: var(--fond); overflow: hidden; }
+    body { background: linear-gradient(135deg, var(--fond), var(--fond2)); }
+    .diaporama { width: 100vw; height: 100vh; position: relative; }
+    .diapositive { display: none; position: absolute; inset: 0; padding: 8vh 9vw 12vh; }
+    .diapositive.active { display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+    .repere { color: var(--accent); font: 700 1rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2 { margin: 0; line-height: 1.1; }
+    h1 { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.8rem); }
+    h2 { max-width: 1000px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    p, li { max-width: 1000px; font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.45; }
+    ul { margin: 0; padding-left: 1.4em; }
+    code { color: var(--accent); font-family: Consolas, monospace; }
+    .exemple { max-width: 1000px; padding: 1.2rem 1.5rem; border-left: 5px solid var(--vert); background: rgba(255, 255, 255, .1); }
+    .exemple p { margin: .3rem 0; }
+    .pied { position: absolute; left: 9vw; right: 9vw; bottom: 2rem; display: flex; justify-content: space-between; color: var(--pale); font: 1rem Arial, sans-serif; }
+    @media (max-width: 700px) { .diapositive { padding: 7vh 7vw 14vh; } .pied { left: 7vw; right: 7vw; } }
+  </style>
+</head>
+<body>
+  <main class="diaporama">
+    <section class="diapositive active">
+      <div class="repere">582-1J1 · Séance 9</div>
+      <h1>Boucles, tableaux, hasard et pseudo-code</h1>
+      <p>Donner une population de lucioles au Jardin des lucioles.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">01 · while</div>
+      <h2>Répéter tant qu'une condition est vraie</h2>
+      <div class="exemple"><p><code>let compteur = 0;</code></p><p><code>while (compteur &lt; 3) {</code></p><p><code>  compteur++;</code></p><p><code>}</code></p></div>
+      <p>La condition doit pouvoir devenir fausse.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">02 · Tableaux</div>
+      <h2>Rassembler plusieurs valeurs</h2>
+      <div class="exemple"><p><code>const positionsX = [];</code></p><p><code>positionsX.push(120);</code></p><p><code>console.log(positionsX[0]);</code></p></div>
+      <p>Les index d'un tableau commencent à zéro.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">03 · hasard</div>
+      <h2>Produire une position différente</h2>
+      <div class="exemple"><p><code>const positionX = Math.floor(Math.random() * 760);</code></p></div>
+      <p><code>Math.random()</code> produit une valeur aléatoire. <code>Math.floor()</code> donne un entier.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">04 · Lucioles</div>
+      <h2>Créer une population limitée</h2>
+      <div class="exemple"><p><code>const MAX_LUCIOLES = 12;</code></p><p><code>while (indexLuciole &lt; MAX_LUCIOLES) {</code></p><p><code>  positionsX.push(positionX);</code></p><p><code>  positionsY.push(positionY);</code></p><p><code>  indexLuciole++;</code></p><p><code>}</code></p></div>
+    </section>
+    <section class="diapositive">
+      <div class="repere">05 · Analyse</div>
+      <h2>Comprendre le problème avant le code</h2>
+      <ul><li>Quelles données faut-il conserver ?</li><li>Quelle règle limite le nombre de lucioles ?</li><li>Quelles positions sont visibles ?</li><li>Dans quel ordre dessiner les éléments ?</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">06 · Pseudo-code</div>
+      <h2>Décrire les étapes sans syntaxe JavaScript</h2>
+      <div class="exemple"><p><code>INITIALISER les tableaux</code></p><p><code>TANT QUE le compteur est inférieur au maximum</code></p><p><code>  GÉNÉRER et AJOUTER les positions</code></p><p><code>  INCRÉMENTER le compteur</code></p><p><code>FIN TANT QUE</code></p></div>
+    </section>
+    <section class="diapositive">
+      <div class="repere">07 · Projet de classe</div>
+      <h2>Le champ de lucioles</h2>
+      <ul><li>une forêt nocturne en arrière-plan;</li><li>un joueur;</li><li>un tableau de positions;</li><li>des lucioles différentes à chaque partie.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">08 · Production</div>
+      <h2>Le champ de lucioles</h2>
+      <p>Modifier le maximum, les marges et le message, puis vérifier le pseudo-code et les deux boucles <code>while</code>.</p>
+    </section>
+    <footer class="pied"><span>← → ou Espace pour naviguer</span><span>Séance 9</span></footer>
+  </main>
+  <script>
+    const diapositives = document.querySelectorAll(".diapositive");
+    let numero = 0;
+    function actualiserDiapositive(diapositiva, index) {
+      diapositiva.classList.toggle("active", index === numero);
+    }
+    function afficherDiapositive(nouveauNumero) {
+      numero = (nouveauNumero + diapositives.length) % diapositives.length;
+      diapositives.forEach(actualiserDiapositive);
+    }
+    function gererClavier(evenement) {
+      if (evenement.key === "ArrowRight" || evenement.key === " ") afficherDiapositive(numero + 1);
+      if (evenement.key === "ArrowLeft") afficherDiapositive(numero - 1);
+    }
+    document.addEventListener("keydown", gererClavier);
+  </script>
+</body>
+</html>
