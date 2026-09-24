@@ -7,6 +7,14 @@
 
 ### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
 
+**Séance 10** [Accéder aux fichiers](seance10/readme.md)
+- Analyse d'un problème et cas limites
+- Pseudo-code : `INITIALISER`, `SI`, `TANT QUE`, `AFFICHER`, `INCREMENTER`, `DECREMENTER`
+- Passage du pseudo-code au code JavaScript
+- Structure, bonnes pratiques et règles de nomenclature
+- Exemple de programmation : [jardin-lucioles](seance10/jardin-lucioles/)
+- Travail de classe : [Le sentier obscurci](seance10/pratique/sentier-obscurci.md)
+
 **Séance 9** [Accéder aux fichiers](seance09/readme.md)
 - Boucle `while`
 - Tableaux simples
