@@ -5,7 +5,25 @@
 
 ## Calendrier des activités (ordre chronologique inverse : du plus récent au plus ancien)
 
+### ÉTAPE #3 : Produire et programmer l’algorithme d’une animation intégrant des fonctions et des contrôles temporels
+
+**Séance 13** [Accéder aux fichiers](seance13/readme.md)
+- Introduction aux tableaux (`Array`)
+- Fonctions : déclaration, appel, paramètres, arguments et valeur de retour
+- Nomenclature, documentation et portée des variables
+- Écouteurs d'événements et événements de la souris (`click`, `dblclick`)
+- États du jeu : intro, jeu et résultat
+- Exemple de programmation : [jardin-lucioles](seance13/jardin-lucioles/)
+- Travail de classe : [Le panneau du sentier](seance13/pratique/panneau-sentier.md)
+
+
 ### ÉTAPE #2 : Produire et programmer l'algorithme d'une application simple intégrant des éléments visuels et des traitements conditionnels
+
+**Séance 12**
+- Examen de mi-session - Pratique (du pseudocode au code JavaScript)
+
+**Séance 11**
+- Examen de mi-session - Théorique (Quiz QCM + Pseudocode)
 
 **Séance 10** [Accéder aux fichiers](seance10/readme.md)
 - Analyse d'un problème et cas limites

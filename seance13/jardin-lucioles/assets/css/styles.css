@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2rem;
+  font-family: sans-serif;
+  color: #f7f3e8;
+  background-color: #102a43;
+}
+
+h1 {
+  color: #f6bd60;
+}
+
+/* Pas de max-width : offsetX et offsetY doivent correspondre aux coordonnées du Canvas. */
+canvas {
+  display: block;
+  border: 2px solid #f6bd60;
+  background-color: #102a43;
+}

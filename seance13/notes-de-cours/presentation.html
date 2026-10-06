@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 13 - Tableaux, fonctions et événements de la souris</title>
+  <style>
+    :root { --fond: #102a43; --fond2: #1f4e5f; --texte: #f7f3e8; --pale: #c8d6df; --accent: #f6bd60; --vert: #84a59d; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; font-family: Georgia, "Times New Roman", serif; color: var(--texte); background: var(--fond); overflow: hidden; }
+    body { background: linear-gradient(135deg, var(--fond), var(--fond2)); }
+    .diaporama { width: 100vw; height: 100vh; position: relative; }
+    .diapositive { display: none; position: absolute; inset: 0; padding: 8vh 9vw 12vh; }
+    .diapositive.active { display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+    .repere { color: var(--accent); font: 700 1rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2 { margin: 0; line-height: 1.1; }
+    h1 { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.8rem); }
+    h2 { max-width: 1000px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    p, li { max-width: 1000px; font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.45; }
+    ul { margin: 0; padding-left: 1.4em; }
+    code { color: var(--accent); font-family: Consolas, monospace; }
+    .exemple { max-width: 1000px; padding: 1.2rem 1.5rem; border-left: 5px solid var(--vert); background: rgba(255, 255, 255, .1); }
+    .exemple p { margin: .3rem 0; }
+    .pied { position: absolute; left: 9vw; right: 9vw; bottom: 2rem; display: flex; justify-content: space-between; color: var(--pale); font: 1rem Arial, sans-serif; }
+    @media (max-width: 700px) { .diapositive { padding: 7vh 7vw 14vh; } .pied { left: 7vw; right: 7vw; } }
+  </style>
+</head>
+<body>
+  <main class="diaporama">
+    <section class="diapositive active">
+      <div class="repere">582-1J1 · Séance 13</div>
+      <h1>Tableaux, fonctions et événements de la souris</h1>
+      <p>Construire l'écran de titre du jardin des lucioles.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">01 · Tableaux</div>
+      <h2>Une liste de valeurs</h2>
+      <div class="exemple"><p><code>const couleurs = ["jaune", "vert", "bleu"];</code></p><p><code>console.log(couleurs[0]); // "jaune"</code></p><p><code>console.log(couleurs.length); // 3</code></p></div>
+      <p>Le premier index est <code>0</code>.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">02 · Tableaux</div>
+      <h2>Modifier et parcourir</h2>
+      <div class="exemple"><p><code>couleurs.push("rouge");</code></p><p><code>let index = 0;</code></p><p><code>while (index &lt; couleurs.length) {</code></p><p><code>  console.log(couleurs[index]);</code></p><p><code>  index++;</code></p><p><code>}</code></p></div>
+    </section>
+    <section class="diapositive">
+      <div class="repere">03 · Fonctions</div>
+      <h2>Pourquoi des fonctions?</h2>
+      <ul><li>Éviter de répéter le même code.</li><li>Donner un nom à une intention.</li><li>Diviser un programme en petites tâches.</li><li>Corriger à un seul endroit.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">04 · Déclaration</div>
+      <h2>Écrire la recette</h2>
+      <div class="exemple"><p><code>function saluerJoueur() {</code></p><p><code>  console.log("Bienvenue !");</code></p><p><code>}</code></p></div>
+      <p>Déclarer une fonction ne l'exécute pas.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">05 · Appel</div>
+      <h2>Suivre la recette</h2>
+      <div class="exemple"><p><code>saluerJoueur();</code></p><p><code>saluerJoueur();</code></p></div>
+      <p>Chaque appel exécute le corps de la fonction. Ici, le message s'affiche deux fois.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">06 · Déclaration ou appel?</div>
+      <h2>Ne pas confondre</h2>
+      <ul><li><code>function saluerJoueur() { ... }</code> : déclaration, une seule fois.</li><li><code>saluerJoueur();</code> : appel, autant de fois que nécessaire.</li><li><code>saluerJoueur</code> sans parenthèses : on désigne la fonction, on ne l'exécute pas.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">07 · Ordre d'exécution</div>
+      <h2>Le programme saute dans la fonction</h2>
+      <div class="exemple"><p><code>console.log("2. Avant l'appel");</code></p><p><code>annoncerPartie();   // saute dans la fonction</code></p><p><code>console.log("4. Après l'appel");</code></p></div>
+      <p>Après l'appel, l'exécution reprend à la ligne suivante.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">08 · Paramètre et argument</div>
+      <h2>La case et ce qu'on écrit dedans</h2>
+      <div class="exemple"><p><code>function saluerJoueur(nomJoueur) {</code></p><p><code>  console.log("Bienvenue, " + nomJoueur);</code></p><p><code>}</code></p><p><code>saluerJoueur("Alex");</code></p></div>
+      <p><code>nomJoueur</code> est un <strong>paramètre</strong> (déclaration). <code>"Alex"</code> est un <strong>argument</strong> (appel).</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">09 · Plusieurs paramètres</div>
+      <h2>L'ordre compte</h2>
+      <div class="exemple"><p><code>function afficherPosition(nom, x, y) { ... }</code></p><p><code>afficherPosition("Luciole", 120, 80);</code></p></div>
+      <p>Les arguments sont associés aux paramètres selon leur position.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">10 · Valeur de retour</div>
+      <h2><code>return</code> renvoie un résultat</h2>
+      <div class="exemple"><p><code>function additionner(a, b) {</code></p><p><code>  return a + b;</code></p><p><code>}</code></p><p><code>const total = additionner(5, 3); // 8</code></p></div>
+      <p>L'appel est remplacé par la valeur retournée.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">11 · Afficher ou retourner?</div>
+      <h2><code>console.log</code> n'est pas <code>return</code></h2>
+      <ul><li><code>console.log()</code> affiche pour le programmeur.</li><li><code>return</code> renvoie une valeur au reste du programme.</li><li>Sans <code>return</code>, une fonction renvoie <code>undefined</code>.</li><li><code>return</code> termine la fonction.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">12 · Nomenclature et portée</div>
+      <h2>Nommer et limiter</h2>
+      <ul><li>Verbe d'action en <code>camelCase</code> : <code>dessinerScene</code>.</li><li>Un commentaire documente la fonction.</li><li>Variable globale : accessible partout.</li><li>Variable locale : n'existe que dans la fonction.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">13 · Événements</div>
+      <h2>Réagir au joueur</h2>
+      <div class="exemple"><p><code>canvas.addEventListener("click", gererClic);</code></p></div>
+      <p>L'élément surveillé, le nom de l'événement, et le <strong>nom</strong> de la fonction à déclencher.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">14 · Sans parenthèses</div>
+      <h2>Le navigateur appelle la fonction</h2>
+      <div class="exemple"><p><code>addEventListener("click", gererClic);   // correct</code></p><p><code>addEventListener("click", gererClic()); // erreur</code></p></div>
+      <p>Avec des parenthèses, la fonction est appelée tout de suite, avant tout clic.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">15 · Souris</div>
+      <h2><code>click</code> et <code>dblclick</code></h2>
+      <div class="exemple"><p><code>function gererClic(evenement) {</code></p><p><code>  console.log(evenement.offsetX, evenement.offsetY);</code></p><p><code>}</code></p></div>
+      <p>L'objet de l'événement contient la position du curseur dans le Canvas.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">16 · Zone cliquable</div>
+      <h2>Le curseur est-il sur le bouton?</h2>
+      <div class="exemple"><p><code>function estDansRectangle(pointX, pointY, rectX, rectY, largeur, hauteur) {</code></p><p><code>  return pointX &gt;= rectX &amp;&amp; pointX &lt;= rectX + largeur &amp;&amp;</code></p><p><code>         pointY &gt;= rectY &amp;&amp; pointY &lt;= rectY + hauteur;</code></p><p><code>}</code></p></div>
+    </section>
+    <section class="diapositive">
+      <div class="repere">17 · États du jeu</div>
+      <h2>intro, jeu, résultat</h2>
+      <div class="exemple"><p><code>let etatJeu = "intro";</code></p><p><code>function boucleJeu() {</code></p><p><code>  if (etatJeu === "intro") { dessinerIntro(); }</code></p><p><code>  else if (etatJeu === "jeu") { dessinerJeu(); }</code></p><p><code>  else if (etatJeu === "resultat") { dessinerResultat(); }</code></p><p><code>}</code></p></div>
+      <p>Pour l'instant, c'est nous qui appelons <code>boucleJeu()</code>. Bientôt, elle sera appelée automatiquement.</p>
+    </section>
+    <section class="diapositive">
+      <div class="repere">18 · Projet de classe</div>
+      <h2>L'écran de titre du jardin</h2>
+      <ul><li>Un tableau d'instructions.</li><li>Un bouton cliquable pour jouer.</li><li>Un double-clic pour afficher un indice.</li><li>Un clic pour attraper une luciole.</li></ul>
+    </section>
+    <section class="diapositive">
+      <div class="repere">19 · Travail de classe</div>
+      <h2>Le panneau du sentier</h2>
+      <p>Un tableau de conseils, des fonctions avec paramètres et valeur de retour, et un écouteur de clic.</p>
+    </section>
+    <footer class="pied"><span>← → ou Espace pour naviguer</span><span>Séance 13</span></footer>
+  </main>
+  <script>
+    const diapositives = document.querySelectorAll(".diapositive");
+    let numero = 0;
+    function actualiserDiapositive(diapositive, index) {
+      diapositive.classList.toggle("active", index === numero);
+    }
+    function afficherDiapositive(nouveauNumero) {
+      numero = (nouveauNumero + diapositives.length) % diapositives.length;
+      diapositives.forEach(actualiserDiapositive);
+    }
+    function gererClavier(evenement) {
+      if (evenement.key === "ArrowRight" || evenement.key === " ") afficherDiapositive(numero + 1);
+      if (evenement.key === "ArrowLeft") afficherDiapositive(numero - 1);
+    }
+    document.addEventListener("keydown", gererClavier);
+  </script>
+</body>
+</html>
