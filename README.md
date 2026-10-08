@@ -7,13 +7,19 @@
 
 ### ÉTAPE #3 : Produire et programmer l’algorithme d’une animation intégrant des fonctions et des contrôles temporels
 
+**Séance 14** [Accéder aux fichiers](seance14/readme.md)
+- Continuation de la séance 13.
+- Exemple de programmation : [loto649](seance14/loto649/)
+- Exemple de programmation (pas commencé) : [jardin-lucioles](seance14/jardin-lucioles/)
+
 **Séance 13** [Accéder aux fichiers](seance13/readme.md)
 - Introduction aux tableaux (`Array`)
 - Fonctions : déclaration, appel, paramètres, arguments et valeur de retour
 - Nomenclature, documentation et portée des variables
 - Écouteurs d'événements et événements de la souris (`click`, `dblclick`)
 - États du jeu : intro, jeu et résultat
-- Exemple de programmation : [jardin-lucioles](seance13/jardin-lucioles/)
+- Exemple de programmation : [loto649](seance13/loto649/)
+- Exemple de programmation (pas commencé) : [jardin-lucioles](seance13/jardin-lucioles/)
 - Travail de classe : [Le panneau du sentier](seance13/pratique/panneau-sentier.md)
 
 
