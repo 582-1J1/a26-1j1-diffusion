@@ -85,13 +85,93 @@ let surface2 = surfaceRectangle(1000, 250);
 console.log("La deuxième superficie est : ", surface2);
 
 
+/**
+ * Génère un entier positif aléatoire entre deux valeurs, inclusivement.
+ * 
+ * @param {Number} min la valeur minimale possible.
+ * @param {Number} max la valeur maximale possible.
+ * 
+ * @returns {Number} le nombre aléatoire généré.
+ */
 function genererEntierAleatoire(min, max) {
-
+    let nbAlea2 = Math.floor(Math.random() * (max - min + 1)) + min;
+    return nbAlea2;
 }
 
 
 // Par exemple
-genererEntierAleatoire(1, 49);
-genererEntierAleatoire(1, 13);
-genererEntierAleatoire(100, 600);
+let nombreEntre1et49 = genererEntierAleatoire(1, 49);
+let autreNombre = genererEntierAleatoire(1, 13);
+console.log("Nombre entier aléatoire entre 100 et 600 : ",
+    genererEntierAleatoire(100, 600));
+// genererEntierAleatoire(10, "allo");
 
+// console.log("Le nombre aléatoire entre 100 et 600 est : ", nbAlea2);
+
+
+
+/******** LES ÉVÉNEMENTS DE LA SOURIS ET DU CLAVIER ***************************/
+// Les événements permettent de déclencher une action lorsque la souris ou le 
+// clavier sont utilisés par l'utilisateur
+// C'est ce qui permet *****l'interactivité****** dans un jeu ou n'importe quel
+// autre type d'application.
+/******************************************************************************/
+
+// Détecter le clic de la souris dans le canvas
+canvas.addEventListener("click", gererClic);
+
+function gererClic(evt) {
+    // Raccourcis pour offsetX et offsetY   
+    let x = evt.offsetX;
+    let y = evt.offsetY;
+
+    // Je détecte le clic sur le bouton "bonus"
+    if (x > 10 && x < 790 && y > 440 && y < 490) {
+        console.log("Tu as cliqué le bouton bonus...");
+    }
+
+    // Je détecte le clic sur le bouton "Annuler"
+    if (x > canvas.width / 2 - 50
+        && x < canvas.width / 2 + 50
+        && y > 25
+        && y < 60
+    ) {
+        console.log("OK bye !");
+    }
+
+}
+
+/**
+ * Dessine une zone d'action ("bouton") dans le canvas.
+ * 
+ * @param {Number} x position en X du bouton.
+ * @param {Number} y position en Y du bouton.
+ * @param {Number} largeur largeur du bouton.
+ * @param {Number} hauteur hauteur du bouton.
+ * @param {String} couleurFond couleur de fond.
+ * @param {String} couleurTexte couleur du texte.
+ * @param {String} texte Texte à afficher sur le bouton.
+ * 
+ * @returns {void}
+ */
+function dessinerBouton(x, y, largeur, hauteur, couleurFond, couleurTexte, texte) {
+    // Dessine le rectangle
+    contexte.fillStyle = couleurFond;
+    contexte.fillRect(x, y, largeur, hauteur);
+
+    // Écrire le texte
+    contexte.fillStyle = couleurTexte;
+    contexte.font = "20px Arial, sans-serif";
+    contexte.textAlign = "center";
+    contexte.textBaseline = "middle";
+    contexte.fillText(texte, x + largeur / 2, y + hauteur / 2);
+}
+
+// Un premier bouton
+dessinerBouton(10, 440, 780, 50, "#090", "white", "CLIC POUR BONUS");
+
+dessinerBouton(canvas.width / 2 - 50, 25, 100, 35, "rgb(200, 25, 25)", "yellow", "Annuler");
+
+
+
+let monNombreChanceux = genererEntierAleatoire(0, 5000);
