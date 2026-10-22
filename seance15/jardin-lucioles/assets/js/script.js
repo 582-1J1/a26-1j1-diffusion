@@ -15,6 +15,8 @@ imgJoueur.src = "assets/images/joueur.svg";
 const imgLuciole = new Image();
 imgLuciole.src = "assets/images/luciole.svg";
 
+// Écran de titre animé
+let positionTitre = -300;
 
 // Gérer le démarrage du jeu
 window.addEventListener("load", initialiser);
@@ -29,6 +31,11 @@ function initialiser() {
 
     // Détecter le clic de la souris
     canvas.addEventListener("click", gererClic);
+
+    // Répéter le code animerTitre 60 fois par seconde
+    // On utilise les "minuteries" JS : 
+    // setTimeout/setInterval/requestAnimationFrame
+    setInterval(dessinerIntro, 1000 / 60);
 }
 
 function gererClic(evt) {
@@ -46,24 +53,47 @@ function gererClic(evt) {
 function dessinerIntro() {
     console.log("Dans l'intro");
     // Image de fond
-    contexte.drawImage(imgFond, 0, 0);
+    dessinerFond(0.65);
 
+    // Titre animé
+    animerTitre();
+}
+
+function dessinerFond(opacite) {
+    contexte.drawImage(imgFond, 0, 0, LARGEUR_CANVAS, HAUTEUR_CANVAS);
+    // Calcul de la valeur couleur par ***concaténation***
+    // contexte.fillStyle = "rgba(10, 15, 20, " + opacite + ")";
+    // Calcul de la valeur couleur par litéraux de gabarit (template literal)
+    // Interpolation de variable
+    contexte.fillStyle = `rgba(10, 15, 20, ${opacite})`;
+
+    contexte.fillRect(0, 0, LARGEUR_CANVAS, HAUTEUR_CANVAS);
+}
+
+function animerTitre() {
     // Titre du jeu
     contexte.font = "60px Arial";
     contexte.fillStyle = "rgb(193, 157, 49)";
     contexte.textAlign = "center";
     contexte.textBaseline = "middle";
-    contexte.fillText("Jardin des lucioles", CENTRE, MILIEU);
+    contexte.fillText("Le jardin des lucioles", positionTitre, MILIEU);
 
-    // Bouton d'action (pour passer à l'écran de partie de jeu)
-    dessinerBouton(CENTRE - 50, HAUTEUR_CANVAS - 150, 100, 60, "rgb(193, 157, 49)", "#2e2e2e", "JOUER");
-
+    // Si positionTitre < CENTRE
+    // Alors augmenter positionTitre par 5
+    if (positionTitre < CENTRE) {
+        // positionTitre = positionTitre + 5;
+        positionTitre += 10;
+    }
+    else {
+        // Bouton d'action (pour passer à l'écran de partie de jeu)
+        dessinerBouton(CENTRE - 50, HAUTEUR_CANVAS - 150, 100, 60, "rgb(193, 157, 49)", "#2e2e2e", "JOUER");
+    }
 }
 
 function dessinerPartieJeu() {
     console.log("Dans la partie de jeu");
     // Vider le canvas
-
+    contexte.clearRect(0, 0, LARGEUR_CANVAS, HAUTEUR_CANVAS);
 
 }
 
