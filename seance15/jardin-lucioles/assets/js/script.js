@@ -15,7 +15,17 @@ imgJoueur.src = "assets/images/joueur.svg";
 const imgLuciole = new Image();
 imgLuciole.src = "assets/images/luciole.svg";
 
+// Définir les sons à utiliser dans le jeu
+const sonIntro = new Audio();
+sonIntro.src = "assets/sons/foret-intro.wav";
+// Le configurer pour faire jouer en boucle
+sonIntro.loop = true;
+
+// Boucle de jeu
+let etatJeu = "intro"; // Autre états possibles : "partie", "fin"
+
 // Écran de titre animé
+let idMinuterieTitre;
 let positionTitre = -300;
 
 // Gérer le démarrage du jeu
@@ -26,16 +36,17 @@ window.addEventListener("load", initialiser);
  * la fenêtre ont été chargées.
  */
 function initialiser() {
-    // Appeler la fonction qui affiche l'écran d'intro
-    dessinerIntro();
-
     // Détecter le clic de la souris
     canvas.addEventListener("click", gererClic);
 
     // Répéter le code animerTitre 60 fois par seconde
     // On utilise les "minuteries" JS : 
     // setTimeout/setInterval/requestAnimationFrame
-    setInterval(dessinerIntro, 1000 / 60);
+    // Pour arrêter une minuterie : clearInterval/clearTimeout/cancelAnimationFrame
+    setInterval(boucleJeu, 1000 / 60);
+
+    // Jouer le son d'intro.
+    sonIntro.play();
 }
 
 function gererClic(evt) {
@@ -46,12 +57,26 @@ function gererClic(evt) {
     // on passe à l'écran de partie de jeu
     if (x > CENTRE - 50 && x < CENTRE + 50 && y > HAUTEUR_CANVAS - 150 && y < HAUTEUR_CANVAS - 90) {
         // Appel dessinerPartieJeu
+        etatJeu = "partie";
+    }
+}
+
+function boucleJeu() {
+    if (etatJeu === "intro") {
+        dessinerIntro();
+    }
+    else if (etatJeu === "partie") {
         dessinerPartieJeu();
+    }
+    else if (etatJeu === "fin") {
+        dessinerFin();
     }
 }
 
 function dessinerIntro() {
     console.log("Dans l'intro");
+    effacerCanvas();
+
     // Image de fond
     dessinerFond(0.65);
 
@@ -72,7 +97,7 @@ function dessinerFond(opacite) {
 
 function animerTitre() {
     // Titre du jeu
-    contexte.font = "60px Arial";
+    contexte.font = "60px 'Bigelow Rules'";
     contexte.fillStyle = "rgb(193, 157, 49)";
     contexte.textAlign = "center";
     contexte.textBaseline = "middle";
@@ -82,7 +107,7 @@ function animerTitre() {
     // Alors augmenter positionTitre par 5
     if (positionTitre < CENTRE) {
         // positionTitre = positionTitre + 5;
-        positionTitre += 10;
+        positionTitre += 5;
     }
     else {
         // Bouton d'action (pour passer à l'écran de partie de jeu)
@@ -93,13 +118,26 @@ function animerTitre() {
 function dessinerPartieJeu() {
     console.log("Dans la partie de jeu");
     // Vider le canvas
-    contexte.clearRect(0, 0, LARGEUR_CANVAS, HAUTEUR_CANVAS);
+    effacerCanvas();
+
+    // Arrêter la minuterie
+    // clearInterval(idMinuterieTitre);
+
+    // Rembobiner le son d'intro
+    sonIntro.currentTime = 0;
+    // Et l'arrêter (mettre sur pause)
+    sonIntro.pause();
 
 }
 
 function dessinerFin() {
+    effacerCanvas();
     console.log("Dans l'écran des résultats");
 
+}
+
+function effacerCanvas() {
+    contexte.clearRect(0, 0, LARGEUR_CANVAS, HAUTEUR_CANVAS);
 }
 
 
