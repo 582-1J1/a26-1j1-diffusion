@@ -35,6 +35,10 @@ let xPersonnage = 0;
 let yPersonnage = 0;
 let directionPersonnage = "droite";
 
+// Info du joueur et des lucioles
+let joueur = {};
+let lucioles = []; // length = 0
+
 // Gérer le démarrage du jeu
 window.addEventListener("load", initialiser);
 
@@ -68,8 +72,9 @@ function gererClic(evt) {
     if (etatJeu === "intro" && x > CENTRE - 50 && x < CENTRE + 50 && y > HAUTEUR_CANVAS - 150 && y < HAUTEUR_CANVAS - 90) {
         // Appel dessinerPartieJeu
         etatJeu = "partie";
-        console.log("Tu as cliqué le bouton");
-
+        // On appelle une fonction qui va définir les positions du joueur et des 
+        // lucioles
+        initialiserPartieJeu();
     }
 }
 
@@ -170,21 +175,51 @@ function animerPersonnage() {
 }
 
 function dessinerPartieJeu() {
-    console.log("Dans la partie de jeu");
     // Vider le canvas
     effacerCanvas();
 
-    // Arrêter la minuterie
-    // clearInterval(idMinuterieTitre);
+    // Arrêter le son sonIntro
+    arreterSon(sonIntro);
 
+    // Dessiner le joueur
+    dessinerJoueur();
+
+    // Dessiner les lucioles
+    dessinerLucioles();
+
+}
+
+function initialiserPartieJeu() {
+    // Définir la position initiale du joueur
+    joueur.x = 100;
+    joueur.y = 200;
+    // Définir les positions aléatoires de 10 lucioles
+    while (lucioles.length < 10) {
+        // ON crée un nouvel objet avec des positionx x et y aléatoires et on l'ajoute au tableau de lucioles
+        let uneLuciole = {};
+        uneLuciole.x = Math.floor(Math.random() * LARGEUR_CANVAS);
+        uneLuciole.y = Math.floor(Math.random() * HAUTEUR_CANVAS);
+        lucioles.push(uneLuciole);
+    }
+    // Pour tester mon code, afficher les deux variables dans la console
+    console.log("Variable 'joueur' : ", joueur);
+    console.log("Variable 'lucioles' : ", lucioles);
+
+}
+
+function dessinerJoueur() {
+
+}
+
+function dessinerLucioles() {
+
+}
+
+function arreterSon(son) {
     // Rembobiner le son d'intro
-    sonIntro.currentTime = 0;
+    son.currentTime = 0;
     // Et l'arrêter (mettre sur pause)
-    sonIntro.pause();
-
-    // console.log("État de la prop 'en pause' du son : ", sonIntro.paused);
-
-
+    son.pause();
 }
 
 function dessinerFin() {
@@ -223,3 +258,26 @@ function dessinerBouton(x, y, largeur, hauteur, couleurFond, couleurTexte, texte
     contexte.textBaseline = "middle";
     contexte.fillText(texte, x + largeur / 2, y + hauteur / 2);
 }
+
+
+
+/* Tests avec les tableaux et les objets */
+
+let nomEtudiante = "Julie";
+let ageEtudiante = 19;
+let noteEtudiante = 85;
+
+// Ou mieux, avec un tableau (Array)
+let infoEtudiante = ["Julie", 19, 85, false, "4383698569"];
+console.log("Taille (length) du tableau infoEtudiantes : ", infoEtudiante.length);
+
+
+// On affiche le nom et l'âge dans la console
+// On affiche le nom et l'âge dans la console
+console.log("Le prénom de l'étudiante est ", infoEtudiante[0]);
+console.log("L'âge de l'étudiante est ", infoEtudiante[1]);
+
+// Encore mieux, avec un objet (Object)
+let infoEtudianteObjet = { prenom: "Julie", age: 19, note: 85 };
+console.log("Prénom : ", infoEtudianteObjet.prenom);
+console.log("Note : ", infoEtudianteObjet.note);
