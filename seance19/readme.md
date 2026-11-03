@@ -25,3 +25,6 @@
 
 ### Exemple de programmation en classe
 > Ouvrez le projet : [jardin-lucioles](jardin-lucioles/)
+
+### Gabarit réutilisable pour la structure de base d'un jeu dans le canvas
+> Ouvrez le projet : [gabarit-jeu-base](gabarit-jeu-base/)
