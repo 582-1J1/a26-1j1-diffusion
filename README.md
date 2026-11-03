@@ -7,6 +7,28 @@
 
 ### ÉTAPE #3 : Produire et programmer l’algorithme d’une animation intégrant des fonctions et des contrôles temporels
 
+**Séance 19** [Accéder aux fichiers](seance19/readme.md)
+- Fonctions temporelles : `setTimeout()` et `setInterval()`, boucle de jeu et d'animation
+- Objets : paires clé-valeur et accès aux propriétés
+- Événements du clavier (`keydown`, `keyup`) et détection de la touche
+- Objet `Audio` et rétroactions visuelle et sonore
+- Exemple de programmation : [jardin-lucioles](seance19/jardin-lucioles/)
+
+**Séance 18**
+- Continuation de la séance 16.
+- Exemple de programmation : [jardin-lucioles](seance18/jardin-lucioles/)
+
+**Séance 17**
+- Cours annulé (AG/vote de grève de la SOGÉCOM).
+
+**Séance 16**
+- Continuation de la séance 15.
+- Exemple de programmation : [jardin-lucioles](seance16/jardin-lucioles/)
+
+**Séance 15** 
+- Continuation de la séance 14.
+- Exemple de programmation : [jardin-lucioles](seance15/jardin-lucioles/)
+
 **Séance 14** [Accéder aux fichiers](seance14/readme.md)
 - Continuation de la séance 13.
 - Exemple de programmation : [loto649](seance14/loto649/)
