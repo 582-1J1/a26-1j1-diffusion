@@ -7,6 +7,18 @@
 
 ### ÉTAPE #3 : Produire et programmer l’algorithme d’une animation intégrant des fonctions et des contrôles temporels
 
+**Séance 23** 
+- Reprise et continuation de la séance 19 (pas de nouvelle matière).
+
+**Séance 22** 
+- Cours annulé (grève étudiante).
+
+**Séance 21** 
+- Cours annulé (grève étudiante).
+
+**Séance 20** 
+- Exercice #2
+
 **Séance 19** [Accéder aux fichiers](seance19/readme.md)
 - Fonctions temporelles : `setTimeout()` et `setInterval()`, boucle de jeu et d'animation
 - Objets : paires clé-valeur et accès aux propriétés
