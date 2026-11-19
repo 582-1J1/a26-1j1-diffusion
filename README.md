@@ -7,6 +7,11 @@
 
 ### ÉTAPE #3 : Produire et programmer l’algorithme d’une animation intégrant des fonctions et des contrôles temporels
 
+**Séance 24** 
+- Continuation de la séance 23
+- Événements du clavier (`keyup`, `keydown`)
+- Syntaxe alternative des objets (*tableaux associatifs*)
+
 **Séance 23** 
 - Reprise et continuation de la séance 19 (pas de nouvelle matière).
 
