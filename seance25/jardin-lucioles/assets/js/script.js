@@ -237,13 +237,24 @@ function initialiserPartieJeu() {
     // Définir la position initiale du joueur
     joueur.x = CENTRE - LARGEUR_JOUEUR / 2;
     joueur.y = MILIEU - HAUTEUR_JOUEUR / 2;
-    // Définir les positions aléatoires de 10 lucioles
+    joueur.largeur = LARGEUR_JOUEUR;
+    joueur.hauteur = HAUTEUR_JOUEUR;
+
+    // Définir les positions aléatoires de NB_LUCIOLES lucioles
     while (lucioles.length < NB_LUCIOLES) {
         // ON crée un nouvel objet avec des positionx x et y aléatoires et on l'ajoute au tableau de lucioles
         let uneLuciole = {};
         uneLuciole.x = Math.floor(Math.random() * (LARGEUR_CANVAS - LARGEUR_LUCIOLE));
         uneLuciole.y = Math.floor(Math.random() * (HAUTEUR_CANVAS - HAUTEUR_LUCIOLE));
-        lucioles.push(uneLuciole);
+        uneLuciole.largeur = LARGEUR_LUCIOLE;
+        uneLuciole.hauteur = HAUTEUR_LUCIOLE;
+
+        // Pousse cette luciole (uneLuciole) dans le tableau des lucioles
+        // Seulement si la luciole n'est pas en collision avec le joueur
+        if (sontEnCollision(joueur, uneLuciole) === false) {
+            lucioles.push(uneLuciole);
+        }
+
     }
     // Pour tester mon code, afficher les deux variables dans la console
     console.log("Variable 'joueur' : ", joueur);
@@ -321,16 +332,33 @@ function sontEnCollision(obj1, obj2) {
     // ET le coté gauche de obj1 est à gauche (<) du côté droite de obj2
     // ET le côté bas de obj1 est en bas (>) du côté haut de obj2
     // ET le côté haut de obj1 est en haut (<) du côté bas de obj2
+    let obj1G = obj1.x;
+    let obj1D = obj1.x + obj1.largeur;
+    let obj1H = obj1.y;
+    let obj1B = obj1.y + obj1.hauteur;
+    let obj2G = obj2.x;
+    let obj2D = obj2.x + obj2.largeur;
+    let obj2H = obj2.y;
+    let obj2B = obj2.y + obj2.hauteur;
 
-    if (tester les condition dans le commentaire ci - dessous) {
+    if (obj1D > obj2G
+        && obj1G < obj2D
+        && obj1B > obj2H
+        && obj1H < obj2B) {
         return true;
     }
     else {
         return false;
     }
-
-
 }
+
+/*
+// Test de la fonction de collision
+let personnageA = { x: 200, y: 300, largeur: 100, hauteur: 100 };
+let personnageB = { x: 275, y: 250, largeur: 100, hauteur: 100 };
+let testCollisionAetB = sontEnCollision(personnageA, personnageB);
+console.log("A et B sont-ils en collision ? ", testCollisionAetB);
+*/
 
 function arreterSon(son) {
     // Rembobiner le son d'intro
